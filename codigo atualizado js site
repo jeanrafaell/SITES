@@ -1,0 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('formulario').addEventListener('submit', function(evento) {
+    evento.preventDefault(); // Evita o envio padrão do formulario
+    const nom= document.getElementById('nom').value;
+    const dat= document.getElementById('dat').value;
+    const opções= document.getElementById('opções').value;
+    const opções2= document.getElementById('opções2').value;
+    const horas= document.getElementById('horas').value;
+
+    
+// cria a mensagem de sucesso
+const mensagem = `
+     <h3>Reserva feita!</h3>
+     <p><strong>Nome:</strong> ${nom}</p>
+     <p><strong>Data da Viagem:</strong> ${dat}</p>
+     <p><strong>Horas da viagem:</strong>${horas}</p>
+     <p><strong>Origem da viagem:</strong> ${opções}</p>
+     <p><strong>Destino:</strong> ${opções2}</p>
+    `;
+
+// Exibe a mensagem
+document.getElementById('mensagem').innerHTML = mensagem;
+
+alert(`Reserva feita!\nNome: ${nom}\nData da Viagem: ${dat}\nHoras da viagem: ${horas}\nOrigem da viagem: ${opções}\nDestino: ${opções2}`);
+    });
+});
